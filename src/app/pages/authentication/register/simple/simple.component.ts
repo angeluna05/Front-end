@@ -145,20 +145,27 @@ export class RegisterSimpleComponent implements OnInit {
     tipoDocumentoid: 0 // Tipo de documento predeterminado
   };
   public selectedjoven: RegisterRequest = { ...this.newjoven };
-  getInstituciones() {
+getInstituciones() {
     const headers = new HttpHeaders({
-      'Authorization': `Bearer ${this.token}`
+      'Authorization': `Bearer ${this.token}`,
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
     });
 
-    this.http.get<Institucion[]>('https://backend-do1k.onrender.com/instituciones').subscribe(
+    const options = {
+      headers: headers,
+      withCredentials: true
+    };
+
+    return this.http.get<Institucion[]>('https://backend-do1k.onrender.com/instituciones', options).subscribe(
       (data) => {
-        this.instituciones=data;
+        this.instituciones = data;
       },
       (error) => {
         console.error('Error fetching instituciones:', error);
       }
     );
-  }
+}
   getEstados() {
     const headers = new HttpHeaders({ 'Authorization': `Bearer ${this.token}` });
     this.http.get<Estado[]>('https://backend-do1k.onrender.com/estado',).subscribe(
