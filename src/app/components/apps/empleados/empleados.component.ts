@@ -42,7 +42,7 @@ interface Empleado {
   styleUrls: ['./empleados.component.scss']
 })
 export class EmpleadosComponent implements OnInit {
-  private apiUrl = 'https://backend-do1k.onrender.com/empleados';
+  private apiUrl = 'https://backend-x2xf.onrender.com/empleados';
   private token = localStorage.getItem('authToken');
   errorMessages: any = {};
 
@@ -103,7 +103,7 @@ export class EmpleadosComponent implements OnInit {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${this.token}`
     });
-    this.http.get<Estado[]>('https://backend-do1k.onrender.com/estado', { headers }).subscribe(
+    this.http.get<Estado[]>('https://backend-x2xf.onrender.com/estado', { headers }).subscribe(
       (data) => {
         this.estados = data;
       },
@@ -118,7 +118,7 @@ export class EmpleadosComponent implements OnInit {
       'Authorization': `Bearer ${this.token}`
     });
 
-    this.http.get<TipoDocumento[]>('https://backend-do1k.onrender.com/tipodocumentos', { headers }).subscribe(
+    this.http.get<TipoDocumento[]>('https://backend-x2xf.onrender.com/tipodocumentos', { headers }).subscribe(
       (data) => {
         this.tiposDocumentos = data;
       },

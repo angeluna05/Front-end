@@ -95,7 +95,7 @@ interface TipoDocumento {
   styleUrls: ['./retos.component.scss']
 })
 export class RetosComponent implements OnInit {
-  private apiUrl = 'https://backend-do1k.onrender.com/retos';
+  private apiUrl = 'https://backend-x2xf.onrender.com/retos';
   private token = localStorage.getItem('authToken');
   errorMessages: any = {};
   public jovenesporequitotal: JovenesPorEquipo = {
@@ -184,7 +184,7 @@ export class RetosComponent implements OnInit {
       'Authorization': `Bearer ${this.token}`
     });
 
-    this.http.get<Equiposretos[]>('https://backend-do1k.onrender.com/equiposretos', { headers }).subscribe(
+    this.http.get<Equiposretos[]>('https://backend-x2xf.onrender.com/equiposretos', { headers }).subscribe(
       (data) => {
         this.equiposRetos = data;
       },
@@ -202,7 +202,7 @@ export class RetosComponent implements OnInit {
       'Authorization': `Bearer ${this.token}`
     });
 
-    this.http.get<Empleado[]>('https://backend-do1k.onrender.com/empleados', { headers }).subscribe(
+    this.http.get<Empleado[]>('https://backend-x2xf.onrender.com/empleados', { headers }).subscribe(
       (data) => {
         this.empleados = data;
       },
@@ -217,7 +217,7 @@ export class RetosComponent implements OnInit {
       'Authorization': `Bearer ${this.token}`
     });
 
-    this.http.get<Encargado[]>('https://backend-do1k.onrender.com/encargados', { headers }).subscribe(
+    this.http.get<Encargado[]>('https://backend-x2xf.onrender.com/encargados', { headers }).subscribe(
       (data) => {
         this.encargados = data;
       },
@@ -232,7 +232,7 @@ export class RetosComponent implements OnInit {
       'Authorization': `Bearer ${this.token}`
     });
   
-    this.http.get<Empresa[]>('https://backend-do1k.onrender.com/empresas', { headers }).subscribe(
+    this.http.get<Empresa[]>('https://backend-x2xf.onrender.com/empresas', { headers }).subscribe(
       (data) => {
         this.empresas = data;
       },
@@ -486,7 +486,7 @@ filterEncargadosByEmpresa(empresaId: number) {
     });
     this.unretoporequipo = [];
 
-    this.http.get<Equiposretos[]>(`https://backend-do1k.onrender.com/equiposretos/equipos/${item}`, { headers }).subscribe(
+    this.http.get<Equiposretos[]>(`https://backend-x2xf.onrender.com/equiposretos/equipos/${item}`, { headers }).subscribe(
       (data) => {
         // Concatenar correctamente los datos al array
         this.unretoporequipo = data[0];
@@ -505,7 +505,7 @@ filterEncargadosByEmpresa(empresaId: number) {
       equiposid: [],
       jovenesid: []
     };
-    this.http.get<Jovenesequipos[]>(`https://backend-do1k.onrender.com/jovenesequipos`, { headers }).subscribe(
+    this.http.get<Jovenesequipos[]>(`https://backend-x2xf.onrender.com/jovenesequipos`, { headers }).subscribe(
       (data) => {
         this.getEquiposretos1(item.equiposid.id);
 

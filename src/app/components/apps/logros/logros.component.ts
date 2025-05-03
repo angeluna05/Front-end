@@ -31,8 +31,8 @@ interface Logro {
   styleUrls: ['./logros.component.scss']
 })
 export class LogrosComponent implements OnInit {
-  private apiUrl = 'https://backend-do1k.onrender.com/logros';
-  private jovenApiUrl = 'https://backend-do1k.onrender.com/jovenes';
+  private apiUrl = 'https://backend-x2xf.onrender.com/logros';
+  private jovenApiUrl = 'https://backend-x2xf.onrender.com/jovenes';
   private token = localStorage.getItem('authToken');
   errorMessages: any = {};
   public tableItem$: Observable<Logro[]>;

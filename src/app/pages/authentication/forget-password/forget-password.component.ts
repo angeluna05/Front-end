@@ -31,8 +31,8 @@ interface Rol {
 })
 export class ForgetPasswordComponent implements OnInit {
 
-  private apiUrl1 = 'https://backend-do1k.onrender.com'; // Asegúrate de usar la URL correcta
-  private apiUrl = 'https://backend-do1k.onrender.com/api'; // Asegúrate de usar la URL correcta
+  private apiUrl1 = 'https://backend-x2xf.onrender.com'; // Asegúrate de usar la URL correcta
+  private apiUrl = 'https://backend-x2xf.onrender.com/api'; // Asegúrate de usar la URL correcta
 
   public correo: string = '';
   public code: string = '';

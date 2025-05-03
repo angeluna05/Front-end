@@ -62,7 +62,7 @@ export interface joven {
   styleUrls: ['./jovenes.component.scss']
 })
 export class JovenesComponent implements OnInit {
-  private apiUrl = 'https://backend-do1k.onrender.com/jovenes';
+  private apiUrl = 'https://backend-x2xf.onrender.com/jovenes';
   private token = localStorage.getItem('authToken');
   errorMessages: any = {};
   public tableItem$: Observable<joven[]>;
@@ -130,7 +130,7 @@ export class JovenesComponent implements OnInit {
       'Authorization': `Bearer ${this.token}`
     });
 
-    this.http.get<Institucion[]>('https://backend-do1k.onrender.com/instituciones', { headers }).subscribe(
+    this.http.get<Institucion[]>('https://backend-x2xf.onrender.com/instituciones', { headers }).subscribe(
       (data) => {
         this.instituciones = data;
       },
@@ -143,7 +143,7 @@ export class JovenesComponent implements OnInit {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${this.token}`
     });
-    this.http.get<Estado[]>('https://backend-do1k.onrender.com/estado', { headers }).subscribe(
+    this.http.get<Estado[]>('https://backend-x2xf.onrender.com/estado', { headers }).subscribe(
       (data) => {
         this.estados = data;
       },
@@ -158,7 +158,7 @@ export class JovenesComponent implements OnInit {
       'Authorization': `Bearer ${this.token}`
     });
 
-    this.http.get<TipoDocumento[]>('https://backend-do1k.onrender.com/tipodocumentos', { headers }).subscribe(
+    this.http.get<TipoDocumento[]>('https://backend-x2xf.onrender.com/tipodocumentos', { headers }).subscribe(
       (data) => {
         this.tiposDocumentos = data;
       },

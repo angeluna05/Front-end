@@ -39,7 +39,7 @@ interface TipoDocumento {
 export class TotalUsersComponent implements OnInit{
   activos: number = 0;
   inactivos: number = 0;
-  private apiUrl = 'https://backend-do1k.onrender.com/jovenes';
+  private apiUrl = 'https://backend-x2xf.onrender.com/jovenes';
   private token = localStorage.getItem('authToken');
   public show: boolean = false
   @ViewChildren(NgbdSortableHeader) headers: QueryList<NgbdSortableHeader>;

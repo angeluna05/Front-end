@@ -71,7 +71,7 @@ interface Jovenes {
   styleUrls: ['./celulas.component.scss']
 })
 export class CelulasComponent {
-  private apiUrl = 'https://backend-do1k.onrender.com/celulas';
+  private apiUrl = 'https://backend-x2xf.onrender.com/celulas';
   private token = localStorage.getItem('authToken');
   private joven = localStorage.getItem('correo');
   errorMessages: any = {};
@@ -166,7 +166,7 @@ export class CelulasComponent {
       'Authorization': `Bearer ${this.token}`
     });
 
-    this.http.get<Empresa[]>('https://backend-do1k.onrender.com/empresas', { headers }).subscribe(
+    this.http.get<Empresa[]>('https://backend-x2xf.onrender.com/empresas', { headers }).subscribe(
       (data) => {
         this.empresas = data;
       },
@@ -237,7 +237,7 @@ data.forEach(element => {
       'Authorization': `Bearer ${this.token}`
     });
 
-    this.http.get<Jovenes[]>('https://backend-do1k.onrender.com/jovenes', { headers }).subscribe(
+    this.http.get<Jovenes[]>('https://backend-x2xf.onrender.com/jovenes', { headers }).subscribe(
       (data) => {
 
         const jovenEncontrado = data.find(joven => joven.correo === this.joven);
@@ -266,7 +266,7 @@ data.forEach(element => {
           'Content-Type': 'application/json'
         });
 
-        this.http.post<inscripcionCelulas>('https://backend-do1k.onrender.com/inscripcion-celulas', { celulaid, jovenid: this.jovenesid, estado: 'Inscrito' }, { headers }).subscribe(
+        this.http.post<inscripcionCelulas>('https://backend-x2xf.onrender.com/inscripcion-celulas', { celulaid, jovenid: this.jovenesid, estado: 'Inscrito' }, { headers }).subscribe(
           (data) => {
             Swal.fire(
               'Felicidades',
@@ -291,7 +291,7 @@ data.forEach(element => {
       'Authorization': `Bearer ${this.token}`
     });
 
-    this.http.get<inscripcionCelulas[]>('https://backend-do1k.onrender.com/inscripcion-celulas', { headers }).subscribe(
+    this.http.get<inscripcionCelulas[]>('https://backend-x2xf.onrender.com/inscripcion-celulas', { headers }).subscribe(
       (data) => {
         this.equiposDelJoven = data;
 
@@ -328,7 +328,7 @@ data.forEach(element => {
         });
   
         // Realizamos la solicitud HTTP para eliminar la inscripción
-        this.http.delete<inscripcionCelulas[]>(`https://backend-do1k.onrender.com/inscripcion-celulas/${jovenesequiposdelete.id}`, { headers }).subscribe(
+        this.http.delete<inscripcionCelulas[]>(`https://backend-x2xf.onrender.com/inscripcion-celulas/${jovenesequiposdelete.id}`, { headers }).subscribe(
           () => {
             // Mensaje de éxito si la eliminación fue exitosa
             Swal.fire(

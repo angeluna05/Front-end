@@ -465,10 +465,10 @@ export class OrderStatusComponent1 {
     });
 
     // Crear observables para cada consulta
-    const inscripcionCelulas$ = this.http.get<inscripcionCelulas[]>('https://backend-do1k.onrender.com/inscripcion-celulas', { headers });
-    const jovenesEquipos$ = this.http.get<Jovenesequipos[]>('https://backend-do1k.onrender.com/jovenesequipos', { headers });
-    const inscripcionSesiones$ = this.http.get<InscripcionSesiones[]>('https://backend-do1k.onrender.com/inscripcionsesiones', { headers });
-    const jovenes$ = this.http.get<Jovenes[]>('https://backend-do1k.onrender.com/jovenes', { headers });
+    const inscripcionCelulas$ = this.http.get<inscripcionCelulas[]>('https://backend-x2xf.onrender.com/inscripcion-celulas', { headers });
+    const jovenesEquipos$ = this.http.get<Jovenesequipos[]>('https://backend-x2xf.onrender.com/jovenesequipos', { headers });
+    const inscripcionSesiones$ = this.http.get<InscripcionSesiones[]>('https://backend-x2xf.onrender.com/inscripcionsesiones', { headers });
+    const jovenes$ = this.http.get<Jovenes[]>('https://backend-x2xf.onrender.com/jovenes', { headers });
 
     // Usar forkJoin para esperar a que todas las consultas se completen
     forkJoin([inscripcionCelulas$, jovenesEquipos$, inscripcionSesiones$, jovenes$]).subscribe(
@@ -607,8 +607,8 @@ export class OrderStatusComponent1 {
     });
   
     // Primero obtenemos las instituciones y luego los jóvenes
-    this.http.get<Institucion[]>('https://backend-do1k.onrender.com/instituciones', { headers }).subscribe((instituciones) => {
-      this.http.get<Jovenes[]>('https://backend-do1k.onrender.com/jovenes', { headers }).subscribe((jovenes: Jovenes[]) => {
+    this.http.get<Institucion[]>('https://backend-x2xf.onrender.com/instituciones', { headers }).subscribe((instituciones) => {
+      this.http.get<Jovenes[]>('https://backend-x2xf.onrender.com/jovenes', { headers }).subscribe((jovenes: Jovenes[]) => {
         
         // Creamos un objeto para contar los jóvenes activos por institución
         const jovenesActivosPorInstitucion: { [key: string]: number } = {};
@@ -664,10 +664,10 @@ export class OrderStatusComponent1 {
     });
   
     // Hacemos las solicitudes a las APIs en paralelo
-    const inscripcionCelulas$ = this.http.get<inscripcionCelulas[]>('https://backend-do1k.onrender.com/inscripcion-celulas', { headers });
-    const jovenesEquipos$ = this.http.get<Jovenesequipos[]>('https://backend-do1k.onrender.com/jovenesequipos', { headers });
-    const inscripcionSesiones$ = this.http.get<InscripcionSesiones[]>('https://backend-do1k.onrender.com/inscripcionsesiones', { headers });
-    const jovenes$ = this.http.get<Jovenes[]>('https://backend-do1k.onrender.com/jovenes', { headers });
+    const inscripcionCelulas$ = this.http.get<inscripcionCelulas[]>('https://backend-x2xf.onrender.com/inscripcion-celulas', { headers });
+    const jovenesEquipos$ = this.http.get<Jovenesequipos[]>('https://backend-x2xf.onrender.com/jovenesequipos', { headers });
+    const inscripcionSesiones$ = this.http.get<InscripcionSesiones[]>('https://backend-x2xf.onrender.com/inscripcionsesiones', { headers });
+    const jovenes$ = this.http.get<Jovenes[]>('https://backend-x2xf.onrender.com/jovenes', { headers });
   
     // Usamos forkJoin para esperar todas las respuestas de las solicitudes
     return forkJoin([inscripcionCelulas$, jovenesEquipos$, inscripcionSesiones$, jovenes$]).pipe(

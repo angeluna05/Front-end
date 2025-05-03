@@ -85,11 +85,11 @@ interface Retos {
   styleUrls: ['./equipos.component.scss']
 })
 export class EquiposComponent implements OnInit {
-  private apiUrlEquipos = 'https://backend-do1k.onrender.com/equipos';
-  private apiUrlEquiposretos = 'https://backend-do1k.onrender.com/equiposretos';
-  private apiUrlJovenesequipos = 'https://backend-do1k.onrender.com/jovenesequipos';
-  private jovenApiUrl = 'https://backend-do1k.onrender.com/jovenes';
-  private retoApiUrl = 'https://backend-do1k.onrender.com/retos';
+  private apiUrlEquipos = 'https://backend-x2xf.onrender.com/equipos';
+  private apiUrlEquiposretos = 'https://backend-x2xf.onrender.com/equiposretos';
+  private apiUrlJovenesequipos = 'https://backend-x2xf.onrender.com/jovenesequipos';
+  private jovenApiUrl = 'https://backend-x2xf.onrender.com/jovenes';
+  private retoApiUrl = 'https://backend-x2xf.onrender.com/retos';
 
   private token = localStorage.getItem('authToken');
   errorMessages: any = {};

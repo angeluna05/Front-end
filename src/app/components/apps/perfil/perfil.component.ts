@@ -168,8 +168,8 @@ interface JovenesPorEquipo {
   styleUrls: ['./perfil.component.scss']
 })
 export class PerfilComponent implements OnInit {
-  private apiUrl = 'https://backend-do1k.onrender.com/logros';
-  private jovenApiUrl = 'https://backend-do1k.onrender.com/jovenes';
+  private apiUrl = 'https://backend-x2xf.onrender.com/logros';
+  private jovenApiUrl = 'https://backend-x2xf.onrender.com/jovenes';
   private token = localStorage.getItem('authToken');
   private joven = localStorage.getItem('correo');
   public userRole = localStorage.getItem('rolName');
@@ -284,7 +284,7 @@ export class PerfilComponent implements OnInit {
       'Authorization': `Bearer ${this.token}`
     });
 
-    this.http.get<Institucion[]>('https://backend-do1k.onrender.com/instituciones', { headers }).subscribe(
+    this.http.get<Institucion[]>('https://backend-x2xf.onrender.com/instituciones', { headers }).subscribe(
       (data) => {
         this.instituciones = data;
       },
@@ -303,7 +303,7 @@ export class PerfilComponent implements OnInit {
       'Authorization': `Bearer ${this.token}`
     });
     if (this.userRole === 'ADMIN') {
-      this.http.get<Usuario[]>('https://backend-do1k.onrender.com/usuarios', { headers }).subscribe(
+      this.http.get<Usuario[]>('https://backend-x2xf.onrender.com/usuarios', { headers }).subscribe(
         (data) => {
           const jovenEncontrado = data.find(joven => joven.correo === this.joven);
           if (jovenEncontrado) {
@@ -333,7 +333,7 @@ export class PerfilComponent implements OnInit {
         });
     }
     else if (this.userRole === 'EMPLEADO') {
-      this.http.get<Empleado[]>('https://backend-do1k.onrender.com/empleados', { headers }).subscribe(
+      this.http.get<Empleado[]>('https://backend-x2xf.onrender.com/empleados', { headers }).subscribe(
         (data) => {
           const jovenEncontrado = data.find(joven => joven.correo === this.joven);
           if (jovenEncontrado) {
@@ -384,7 +384,7 @@ export class PerfilComponent implements OnInit {
       );
     }
     else if (this.userRole === 'EMPLEADO') {
-      this.http.put<Empleado>(`https://backend-do1k.onrender.com/empleados/${this.selectedEmpleado.id}`, this.selectedEmpleado, { headers }).subscribe(
+      this.http.put<Empleado>(`https://backend-x2xf.onrender.com/empleados/${this.selectedEmpleado.id}`, this.selectedEmpleado, { headers }).subscribe(
         () => {
           this.validate = false;
           this.tooltipValidation = false;
@@ -431,7 +431,7 @@ export class PerfilComponent implements OnInit {
       'Authorization': `Bearer ${this.token}`
     });
 
-    this.http.get<TipoDocumento[]>('https://backend-do1k.onrender.com/tipodocumentos', { headers }).subscribe(
+    this.http.get<TipoDocumento[]>('https://backend-x2xf.onrender.com/tipodocumentos', { headers }).subscribe(
       (data) => {
         this.tiposDocumentos = data;
       },
@@ -479,7 +479,7 @@ export class PerfilComponent implements OnInit {
       'Authorization': `Bearer ${this.token}`
     });
 
-    this.http.get<Jovenesequipos[]>(`https://backend-do1k.onrender.com/jovenesequipos/joven/${this.jovenesid}`, { headers }).subscribe(
+    this.http.get<Jovenesequipos[]>(`https://backend-x2xf.onrender.com/jovenesequipos/joven/${this.jovenesid}`, { headers }).subscribe(
       (data) => {
         this.jovenesEquipos = data;
         console.log(this.jovenesEquipos)
@@ -500,7 +500,7 @@ export class PerfilComponent implements OnInit {
       equiposid: null,
       jovenesid: []
     };
-    this.http.get<Jovenesequipos[]>(`https://backend-do1k.onrender.com/jovenesequipos`, { headers }).subscribe(
+    this.http.get<Jovenesequipos[]>(`https://backend-x2xf.onrender.com/jovenesequipos`, { headers }).subscribe(
       (data) => {
         this.getEquiposretos1(item.equiposid.id);
 
@@ -529,7 +529,7 @@ export class PerfilComponent implements OnInit {
     });
     this.unretoporequipo = [];
 
-    this.http.get<Equiposretos[]>(`https://backend-do1k.onrender.com/equiposretos/equipos/${item}`, { headers }).subscribe(
+    this.http.get<Equiposretos[]>(`https://backend-x2xf.onrender.com/equiposretos/equipos/${item}`, { headers }).subscribe(
       (data) => {
         // Concatenar correctamente los datos al array
         this.unretoporequipo = data;
@@ -552,7 +552,7 @@ export class PerfilComponent implements OnInit {
       const element = this.jovenesEquipos[i];
 
       // Primero, obtenemos los retos de cada equipo
-      this.http.get<Equiposretos[]>(`https://backend-do1k.onrender.com/equiposretos/equipos/${element.equiposid.id}`, { headers }).subscribe(
+      this.http.get<Equiposretos[]>(`https://backend-x2xf.onrender.com/equiposretos/equipos/${element.equiposid.id}`, { headers }).subscribe(
         (data) => {
           // Filtramos los retos cuyo estado es "En curso"
           const retosActivos = data.filter(retro => retro.retosid.estado === 'En curso');
@@ -589,7 +589,7 @@ export class PerfilComponent implements OnInit {
       );
 
       // Ahora obtenemos los jóvenes inscritos en el equipo
-      this.http.get<Jovenesequipos[]>(`https://backend-do1k.onrender.com/jovenesequipos/equipo/${element.equiposid.id}`, { headers }).subscribe(
+      this.http.get<Jovenesequipos[]>(`https://backend-x2xf.onrender.com/jovenesequipos/equipo/${element.equiposid.id}`, { headers }).subscribe(
         (data) => {
           // Aquí debes agregar la información de los jóvenes solo si el equipo tiene retos activos
           if (equiposConRetosActivos.includes(element)) {
@@ -660,7 +660,7 @@ export class PerfilComponent implements OnInit {
     });
     const jovenesequiposdelete = this.jovenesEquipos.find(joven => this.equiposRetos.find(reto => joven.equiposid.id === reto.equiposid.id && reto.retosid.id === retoId));
 
-    this.http.delete(`https://backend-do1k.onrender.com/jovenesequipos/${jovenesequiposdelete.id}`, { headers })
+    this.http.delete(`https://backend-x2xf.onrender.com/jovenesequipos/${jovenesequiposdelete.id}`, { headers })
       .subscribe(
         () => {
           Swal.fire(
@@ -710,7 +710,7 @@ export class PerfilComponent implements OnInit {
       'Authorization': `Bearer ${this.token}`
     });
 
-    this.http.get<inscripcionCelulas[]>('https://backend-do1k.onrender.com/inscripcion-celulas', { headers }).subscribe(
+    this.http.get<inscripcionCelulas[]>('https://backend-x2xf.onrender.com/inscripcion-celulas', { headers }).subscribe(
       (data) => {
         data.forEach(element => {
         if (element.estado ==='Inscrito') {
@@ -776,7 +776,7 @@ getCelulas() {
   });
   this.celulas = [];
 
-  this.http.get<Celula[]>('https://backend-do1k.onrender.com/celulas', { headers }).subscribe(
+  this.http.get<Celula[]>('https://backend-x2xf.onrender.com/celulas', { headers }).subscribe(
     (data) => {
 // Obtenemos la fecha actual
 const fechaActual = new Date();
@@ -849,7 +849,7 @@ deleteJovenCelulas(celulaId: number) {
       });
 
       // Realizamos la solicitud HTTP para eliminar la inscripción
-      this.http.delete<inscripcionCelulas[]>(`https://backend-do1k.onrender.com/inscripcion-celulas/${jovenesequiposdelete.id}`, { headers }).subscribe(
+      this.http.delete<inscripcionCelulas[]>(`https://backend-x2xf.onrender.com/inscripcion-celulas/${jovenesequiposdelete.id}`, { headers }).subscribe(
         () => {
           // Mensaje de éxito si la eliminación fue exitosa
           Swal.fire(

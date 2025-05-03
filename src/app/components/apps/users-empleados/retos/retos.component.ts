@@ -103,7 +103,7 @@ interface Jovenes {
 
 })
 export class RetosComponent implements OnInit {
-  private apiUrl = 'https://backend-do1k.onrender.com/retos';
+  private apiUrl = 'https://backend-x2xf.onrender.com/retos';
   private token = localStorage.getItem('authToken');
   private joven = localStorage.getItem('correo');
   errorMessages: any = {};
@@ -201,7 +201,7 @@ export class RetosComponent implements OnInit {
       'Authorization': `Bearer ${this.token}`
     });
 
-    this.http.get<Empresa[]>('https://backend-do1k.onrender.com/empresas', { headers }).subscribe(
+    this.http.get<Empresa[]>('https://backend-x2xf.onrender.com/empresas', { headers }).subscribe(
       (data) => {
         this.empresas = data;
       },
@@ -252,7 +252,7 @@ export class RetosComponent implements OnInit {
       'Authorization': `Bearer ${this.token}`
     });
 
-    this.http.get<Jovenesequipos[]>('https://backend-do1k.onrender.com/jovenesequipos', { headers }).subscribe(
+    this.http.get<Jovenesequipos[]>('https://backend-x2xf.onrender.com/jovenesequipos', { headers }).subscribe(
       (data) => {
         this.jovenesEquipos = data;
         console.log(this.jovenesEquipos)
@@ -267,7 +267,7 @@ export class RetosComponent implements OnInit {
       'Authorization': `Bearer ${this.token}`
     });
 
-    this.http.get<Equiposretos[]>('https://backend-do1k.onrender.com/equiposretos', { headers }).subscribe(
+    this.http.get<Equiposretos[]>('https://backend-x2xf.onrender.com/equiposretos', { headers }).subscribe(
       (data) => {
         this.equiposRetos = data;
       },
@@ -281,7 +281,7 @@ export class RetosComponent implements OnInit {
       'Authorization': `Bearer ${this.token}`
     });
 
-    this.http.get<Equipos[]>('https://backend-do1k.onrender.com/equipos', { headers }).subscribe(
+    this.http.get<Equipos[]>('https://backend-x2xf.onrender.com/equipos', { headers }).subscribe(
       (data) => {
         this.equipos = data;
       },
@@ -294,7 +294,7 @@ export class RetosComponent implements OnInit {
       'Authorization': `Bearer ${this.token}`
     });
 
-    this.http.get<Empleado[]>('https://backend-do1k.onrender.com/empleados', { headers }).subscribe(
+    this.http.get<Empleado[]>('https://backend-x2xf.onrender.com/empleados', { headers }).subscribe(
       (data) => {
         const jovenEncontrado = data.find(joven => joven.correo === this.joven);
 
@@ -327,7 +327,7 @@ export class RetosComponent implements OnInit {
       'Content-Type': 'application/json'
     });
 
-    this.http.post<Equipos>('https://backend-do1k.onrender.com/equipos', this.newEquipos, { headers }).subscribe(
+    this.http.post<Equipos>('https://backend-x2xf.onrender.com/equipos', this.newEquipos, { headers }).subscribe(
       (data) => {
         Swal.fire({
           icon: "success",
@@ -386,7 +386,7 @@ export class RetosComponent implements OnInit {
       'Content-Type': 'application/json'
     });
 
-    this.http.post('https://backend-do1k.onrender.com/jovenesequipos', { jovenesid: this.jovenesid, equiposid }, { headers }).subscribe(
+    this.http.post('https://backend-x2xf.onrender.com/jovenesequipos', { jovenesid: this.jovenesid, equiposid }, { headers }).subscribe(
       () => {
         this.modalService.dismissAll(); // Cerrar el modal
         this.getEquiposretos();
@@ -413,7 +413,7 @@ export class RetosComponent implements OnInit {
       'Content-Type': 'application/json'
     });
 
-    this.http.post('https://backend-do1k.onrender.com/equiposretos', { equiposid, retosid }, { headers }).subscribe(
+    this.http.post('https://backend-x2xf.onrender.com/equiposretos', { equiposid, retosid }, { headers }).subscribe(
       () => {
         this.modalService.dismissAll(); // Cerrar el modal
         this.getEquiposretos();
@@ -430,7 +430,7 @@ export class RetosComponent implements OnInit {
       'Authorization': `Bearer ${this.token}`
     });
 
-    this.http.get<any[]>(`https://backend-do1k.onrender.com/jovenesequipos/joven/${this.jovenesid}`, { headers }).subscribe(
+    this.http.get<any[]>(`https://backend-x2xf.onrender.com/jovenesequipos/joven/${this.jovenesid}`, { headers }).subscribe(
       (data) => {
         this.equiposDelJoven = data; // Extraer IDs de equipos
         console.log('IDs de equipos del joven:', this.equiposDelJoven);
@@ -454,7 +454,7 @@ export class RetosComponent implements OnInit {
       'Authorization': `Bearer ${this.token}`
     });
 
-    this.http.get<any[]>(`https://backend-do1k.onrender.com/equiposretos`, { headers }).subscribe(
+    this.http.get<any[]>(`https://backend-x2xf.onrender.com/equiposretos`, { headers }).subscribe(
       (data) => {
         this.retosDelEquipo = data; // Extraer IDs de retos
         console.log('IDs de retos asociados a los equipos del joven:', this.retosDelEquipo);
@@ -534,7 +534,7 @@ isInscripcionFinalizada(inicioInscripcion: string, finInscripcion: string): bool
     });
     const jovenesequiposdelete = this.equiposDelJoven.find(joven => this.retosDelEquipo.find(reto => joven.equiposid.id === reto.equiposid.id && reto.retosid.id === retoId));
 
-    this.http.delete(`https://backend-do1k.onrender.com/jovenesequipos/${jovenesequiposdelete.id}`, { headers })
+    this.http.delete(`https://backend-x2xf.onrender.com/jovenesequipos/${jovenesequiposdelete.id}`, { headers })
       .subscribe(
         () => {
           Swal.fire(
@@ -581,7 +581,7 @@ isInscripcionFinalizada(inicioInscripcion: string, finInscripcion: string): bool
     });
     this.unretoporequipo = {};
 
-    this.http.get<Equiposretos>(`https://backend-do1k.onrender.com/equiposretos/equipos/${item}`, { headers }).subscribe(
+    this.http.get<Equiposretos>(`https://backend-x2xf.onrender.com/equiposretos/equipos/${item}`, { headers }).subscribe(
       (data) => {
         // Concatenar correctamente los datos al array
         this.unretoporequipo = data[0];

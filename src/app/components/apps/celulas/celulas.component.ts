@@ -49,7 +49,7 @@ interface Empresa {
   styleUrls: ['./celulas.component.scss']
 })
 export class CelulasComponent implements OnInit {
-  private apiUrl = 'https://backend-do1k.onrender.com/celulas';
+  private apiUrl = 'https://backend-x2xf.onrender.com/celulas';
   private token = localStorage.getItem('authToken');
   errorMessages: any = {};
 
@@ -118,7 +118,7 @@ export class CelulasComponent implements OnInit {
       });
   
       // Primero, obtenemos todas las inscripciones de las células
-      this.http.get<any[]>('https://backend-do1k.onrender.com/inscripcion-celulas', { headers }).subscribe(
+      this.http.get<any[]>('https://backend-x2xf.onrender.com/inscripcion-celulas', { headers }).subscribe(
         (inscripciones) => {
           // Filtrar las inscripciones para obtener solo las de la célula seleccionada
           const inscripcionesCelula = inscripciones.filter(inscripcion => inscripcion.celulaid.id === celula.id);
@@ -161,7 +161,7 @@ export class CelulasComponent implements OnInit {
       'Authorization': `Bearer ${this.token}`
     });
 
-    this.http.get<Empleado[]>('https://backend-do1k.onrender.com/empleados', { headers }).subscribe(
+    this.http.get<Empleado[]>('https://backend-x2xf.onrender.com/empleados', { headers }).subscribe(
       (data) => {
         this.empleados = data;
       },
@@ -176,7 +176,7 @@ export class CelulasComponent implements OnInit {
       'Authorization': `Bearer ${this.token}`
     });
 
-    this.http.get<Encargado[]>('https://backend-do1k.onrender.com/encargados', { headers }).subscribe(
+    this.http.get<Encargado[]>('https://backend-x2xf.onrender.com/encargados', { headers }).subscribe(
       (data) => {
         this.encargados = data;
       },
@@ -191,7 +191,7 @@ export class CelulasComponent implements OnInit {
       'Authorization': `Bearer ${this.token}`
     });
 
-    this.http.get<Empresa[]>('https://backend-do1k.onrender.com/empresas', { headers }).subscribe(
+    this.http.get<Empresa[]>('https://backend-x2xf.onrender.com/empresas', { headers }).subscribe(
       (data) => {
         this.empresas = data;
       },

@@ -125,7 +125,7 @@ export class RegisterSimpleComponent implements OnInit {
   public selectedUsuario: Usuario = { ...this.newUsuario };
 
 
-  private apiUrl = 'https://backend-do1k.onrender.com/api/register';
+  private apiUrl = 'https://backend-x2xf.onrender.com/api/register';
 
   public newjoven: RegisterRequest = {
     correo: '',
@@ -150,7 +150,7 @@ export class RegisterSimpleComponent implements OnInit {
       'Authorization': `Bearer ${this.token}`
     });
 
-    this.http.get<Institucion[]>('https://backend-do1k.onrender.com/instituciones').subscribe(
+    this.http.get<Institucion[]>('https://backend-x2xf.onrender.com/instituciones').subscribe(
       (data) => {
         this.instituciones=data;
       },
@@ -161,7 +161,7 @@ export class RegisterSimpleComponent implements OnInit {
   }
   getEstados() {
     const headers = new HttpHeaders({ 'Authorization': `Bearer ${this.token}` });
-    this.http.get<Estado[]>('https://backend-do1k.onrender.com/estado',).subscribe(
+    this.http.get<Estado[]>('https://backend-x2xf.onrender.com/estado',).subscribe(
       (data) => { this.estados = data; },
       (error) => { console.error('Error fetching estados:', error); }
     );
@@ -169,7 +169,7 @@ export class RegisterSimpleComponent implements OnInit {
 
   getRoles() {
     const headers = new HttpHeaders({ 'Authorization': `Bearer ${this.token}` });
-    this.http.get<Rol[]>('https://backend-do1k.onrender.com/roles',).subscribe(
+    this.http.get<Rol[]>('https://backend-x2xf.onrender.com/roles',).subscribe(
       (data) => { this.roles = data; },
       (error) => { console.error('Error fetching roles:', error); }
     );
@@ -271,7 +271,7 @@ export class RegisterSimpleComponent implements OnInit {
       'Authorization': `Bearer ${this.token}`
     });
 
-    this.http.get<TipoDocumento[]>('https://backend-do1k.onrender.com/tipodocumentos').subscribe(
+    this.http.get<TipoDocumento[]>('https://backend-x2xf.onrender.com/tipodocumentos').subscribe(
       (data) => {
         this.tiposDocumentos = data;
       },

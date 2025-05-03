@@ -32,7 +32,7 @@ interface Empresa {
   styleUrls: ['./empresas.component.scss']
 })
 export class EmpresasComponent implements OnInit {
-  private apiUrl = 'https://backend-do1k.onrender.com/empresas';
+  private apiUrl = 'https://backend-x2xf.onrender.com/empresas';
   private token = localStorage.getItem('authToken');;
   errorMessages: any = {};
   public tableItem$: Observable<Empresa[]>;
@@ -87,7 +87,7 @@ export class EmpresasComponent implements OnInit {
       'Authorization': `Bearer ${this.token}`
     });
 
-    this.http.get<Estado[]>('https://backend-do1k.onrender.com/estado', { headers }).subscribe(
+    this.http.get<Estado[]>('https://backend-x2xf.onrender.com/estado', { headers }).subscribe(
       (data) => {
         this.estados = data;
       },

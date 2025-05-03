@@ -45,7 +45,7 @@ interface Encargado {
   styleUrls: ['./encargados.component.scss']
 })
 export class EncargadosComponent implements OnInit {
-  private apiUrl = 'https://backend-do1k.onrender.com/encargados';
+  private apiUrl = 'https://backend-x2xf.onrender.com/encargados';
   private token = localStorage.getItem('authToken');
   errorMessages: any = {};
 
@@ -109,7 +109,7 @@ export class EncargadosComponent implements OnInit {
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${this.token}`
     });
-    this.http.get<Estado[]>('https://backend-do1k.onrender.com/estado', { headers }).subscribe(
+    this.http.get<Estado[]>('https://backend-x2xf.onrender.com/estado', { headers }).subscribe(
       (data) => {
         this.estados = data;
       },
@@ -124,7 +124,7 @@ export class EncargadosComponent implements OnInit {
       'Authorization': `Bearer ${this.token}`
     });
 
-    this.http.get<TipoDocumento[]>('https://backend-do1k.onrender.com/tipodocumentos', { headers }).subscribe(
+    this.http.get<TipoDocumento[]>('https://backend-x2xf.onrender.com/tipodocumentos', { headers }).subscribe(
       (data) => {
         this.tiposDocumentos = data;
       },
@@ -139,7 +139,7 @@ export class EncargadosComponent implements OnInit {
       'Authorization': `Bearer ${this.token}`
     });
 
-    this.http.get<Empresa[]>('https://backend-do1k.onrender.com/empresas', { headers }).subscribe(
+    this.http.get<Empresa[]>('https://backend-x2xf.onrender.com/empresas', { headers }).subscribe(
       (data) => {
         this.empresas = data;
       },

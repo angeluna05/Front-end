@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
         correo: this.loginForm.get('email')?.value,
         contrasena: this.loginForm.get('password')?.value
       };
-      this.http.post('https://backend-do1k.onrender.com/api/login', loginData).subscribe(
+      this.http.post('https://backend-x2xf.onrender.com/api/login', loginData).subscribe(
         (response: any) => {
           // Guardar el token en localStorage
           localStorage.setItem('authToken', response.token);

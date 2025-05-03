@@ -25,7 +25,7 @@ export const COMPANYDB: CompanyDB[] = [];
   providedIn: 'root'
 })
 export class EmpresaService {
-  private apiUrl = 'https://backend-do1k.onrender.com/empresas'; // Corrige la URL si es necesario
+  private apiUrl = 'https://backend-x2xf.onrender.com/empresas'; // Corrige la URL si es necesario
   private token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYW11ZWxzdGl2ZW4yMDA1QGdtYWlsLmNvbSIsImlhdCI6MTcyMzY0MTE4NiwiZXhwIjoxNzIzNjQ4Mzg2fQ.SpKhEVtpHRIrrHRVToqw_f0gcwfAz6qMrzsXMpLUPKo'; // Reemplaza con tu token
 
   constructor(private http: HttpClient) {}

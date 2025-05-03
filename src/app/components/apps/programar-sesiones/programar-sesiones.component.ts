@@ -91,7 +91,7 @@ export class ProgramarSesionesComponent implements OnInit, AfterViewInit {
   }
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   time = { hour: 12, minute: 12 }
-  private apiUrl = 'https://backend-do1k.onrender.com/programarsesion';
+  private apiUrl = 'https://backend-x2xf.onrender.com/programarsesion';
   private token = localStorage.getItem('authToken');
   meridian = true;
   errorMessages: any = {};
@@ -236,7 +236,7 @@ export class ProgramarSesionesComponent implements OnInit, AfterViewInit {
     });
 
     this.http.put<inscripcionSesiones[]>(
-      `https://backend-do1k.onrender.com/inscripcionsesiones/estado/${inscripcionId}`,
+      `https://backend-x2xf.onrender.com/inscripcionsesiones/estado/${inscripcionId}`,
       nuevoEstado,
       { headers }
     ).subscribe({
@@ -295,7 +295,7 @@ export class ProgramarSesionesComponent implements OnInit, AfterViewInit {
       'Authorization': `Bearer ${this.token}`
     });
 
-    this.http.get<inscripcionSesiones[]>(`https://backend-do1k.onrender.com/inscripcionsesiones/by-sesionesid/${id}`, { headers }).subscribe(
+    this.http.get<inscripcionSesiones[]>(`https://backend-x2xf.onrender.com/inscripcionsesiones/by-sesionesid/${id}`, { headers }).subscribe(
       (data) => {
         // Limpiar el array de inscripciones y el objeto de permissionGroups para evitar datos de sesiones anteriores
         this.inscripcionsesiones = data;

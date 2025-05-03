@@ -75,8 +75,8 @@ export class SesionesComponent implements OnInit, AfterViewInit {
   @ViewChild('addEventAccess') addEventAccess!: ElementRef;
   @ViewChild(NgbdSortableHeader) headers: QueryList<NgbdSortableHeader>;
 
-  private apiUrl = 'https://backend-do1k.onrender.com/programarsesion';
-  private apiUrl1 = 'https://backend-do1k.onrender.com/inscripcionsesiones';
+  private apiUrl = 'https://backend-x2xf.onrender.com/programarsesion';
+  private apiUrl1 = 'https://backend-x2xf.onrender.com/inscripcionsesiones';
   private token = localStorage.getItem('authToken');
   private joven = localStorage.getItem('correo');
   meridian = true;
@@ -563,7 +563,7 @@ export class SesionesComponent implements OnInit, AfterViewInit {
       'Authorization': `Bearer ${this.token}`
     });
 
-    this.http.get<joven[]>('https://backend-do1k.onrender.com/jovenes', { headers }).subscribe(
+    this.http.get<joven[]>('https://backend-x2xf.onrender.com/jovenes', { headers }).subscribe(
       (data) => {
 
         const jovenEncontrado = data.find(joven => joven.correo === this.joven);

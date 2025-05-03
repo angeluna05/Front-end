@@ -37,7 +37,7 @@ export interface Institucion {
   styleUrls: ['./instituciones.component.scss']
 })
 export class InstitucionesComponent implements OnInit {
-  private apiUrl = 'https://backend-do1k.onrender.com/instituciones'; // URL del API para instituciones
+  private apiUrl = 'https://backend-x2xf.onrender.com/instituciones'; // URL del API para instituciones
   private token = localStorage.getItem('authToken');
 
   public tableItem$: Observable<Institucion[]>;
@@ -98,7 +98,7 @@ export class InstitucionesComponent implements OnInit {
       'Authorization': `Bearer ${this.token}`
     });
 
-    this.http.get<Estado[]>('https://backend-do1k.onrender.com/estado', { headers }).subscribe(
+    this.http.get<Estado[]>('https://backend-x2xf.onrender.com/estado', { headers }).subscribe(
       (data) => {
         this.estados = data;
       },
@@ -113,7 +113,7 @@ export class InstitucionesComponent implements OnInit {
       'Authorization': `Bearer ${this.token}`
     });
 
-    this.http.get<Empleado[]>('https://backend-do1k.onrender.com/empleados', { headers }).subscribe(
+    this.http.get<Empleado[]>('https://backend-x2xf.onrender.com/empleados', { headers }).subscribe(
       (data) => {
         this.empleados = data;
       },

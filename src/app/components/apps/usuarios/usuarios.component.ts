@@ -36,7 +36,7 @@ interface Rol {
   styleUrls: ['./usuarios.component.scss']
 })
 export class UsuariosComponent implements OnInit {
-  private apiUrl = 'https://backend-do1k.onrender.com/usuarios';
+  private apiUrl = 'https://backend-x2xf.onrender.com/usuarios';
   private token = localStorage.getItem('authToken');
 
   public tableItem$: Observable<Usuario[]>;
@@ -116,7 +116,7 @@ export class UsuariosComponent implements OnInit {
       'Authorization': `Bearer ${this.token}`
     });
 
-    this.http.get<Estado[]>('https://backend-do1k.onrender.com/estado', { headers }).subscribe(
+    this.http.get<Estado[]>('https://backend-x2xf.onrender.com/estado', { headers }).subscribe(
       (data) => {
         this.estados = data;
       },
@@ -131,7 +131,7 @@ export class UsuariosComponent implements OnInit {
       'Authorization': `Bearer ${this.token}`
     });
 
-    this.http.get<Rol[]>('https://backend-do1k.onrender.com/roles', { headers }).subscribe(
+    this.http.get<Rol[]>('https://backend-x2xf.onrender.com/roles', { headers }).subscribe(
       (data) => {
         this.roles = data;
       },

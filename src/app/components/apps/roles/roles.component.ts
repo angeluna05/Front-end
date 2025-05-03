@@ -44,7 +44,7 @@ interface permisosroles {
   styleUrls: ['./roles.component.scss']
 })
 export class RolesComponent implements OnInit {
-  private apiUrl = 'https://backend-do1k.onrender.com/roles';
+  private apiUrl = 'https://backend-x2xf.onrender.com/roles';
   private token = localStorage.getItem('authToken');
   errorMessages: any = {};
   public tableItem$: Observable<Rol[]>;
@@ -157,7 +157,7 @@ export class RolesComponent implements OnInit {
       'Authorization': `Bearer ${this.token}`
     });
 
-    this.http.get<permisosroles[]>(`https://backend-do1k.onrender.com/permisosroles/rol/${rolId}/permisos`, { headers }).subscribe(
+    this.http.get<permisosroles[]>(`https://backend-x2xf.onrender.com/permisosroles/rol/${rolId}/permisos`, { headers }).subscribe(
       (data) => {
         this.permisosroles.splice(0, this.permisosroles.length);
         this.permisosroles = data
@@ -244,7 +244,7 @@ export class RolesComponent implements OnInit {
     });
 
     // Realizar la petición POST al backend
-    this.http.post(`https://backend-do1k.onrender.com/permisosroles/asignar?rolId=${rolId}&nombrePermiso=${permisoName}`, {}, { headers })
+    this.http.post(`https://backend-x2xf.onrender.com/permisosroles/asignar?rolId=${rolId}&nombrePermiso=${permisoName}`, {}, { headers })
       .subscribe(response => {
         this.validate = false;
         this.tooltipValidation = false;
@@ -266,7 +266,7 @@ export class RolesComponent implements OnInit {
     });
 
     // Realizar la petición DELETE al backend
-    this.http.delete(`https://backend-do1k.onrender.com/permisosroles/eliminar?rolId=${rolId}&nombrePermiso=${permisoName}`, { headers })
+    this.http.delete(`https://backend-x2xf.onrender.com/permisosroles/eliminar?rolId=${rolId}&nombrePermiso=${permisoName}`, { headers })
       .subscribe(response => {
         console.log('Permiso eliminado con éxito:', response);
       }, error => {
@@ -298,7 +298,7 @@ export class RolesComponent implements OnInit {
       'Authorization': `Bearer ${this.token}`
     });
 
-    this.http.get<Permiso[]>('https://backend-do1k.onrender.com/permisos', { headers }).subscribe(
+    this.http.get<Permiso[]>('https://backend-x2xf.onrender.com/permisos', { headers }).subscribe(
       (data) => {
         this.permisos = data;
       },
